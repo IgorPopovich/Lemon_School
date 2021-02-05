@@ -34,8 +34,8 @@ function minNumber(sum, number) {
     return sum;
   } else {
     return minNumber(sum + 1, number);
-  }
-}
+  };
+};
 alert(minNumber(300, 17));
 
 
@@ -46,5 +46,5 @@ function factorial(num) {
   if (num < 0) return;
   if (num === 0) return 1;
   return num * factorial(num - 1);
-}
+};
 factorial(5);
