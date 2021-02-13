@@ -80,13 +80,14 @@ var strRev = "";
 for (i = str.length - 1; i >= 0; i--) {
   strRev += str[i];
 }
+console.log(strRev)
 
 /*Дано число - вывести первые N делителей этого числа нацело.*/
 
 let num = 20,
   delNumber = [];
 for (let i = 2; i != num; i++) {
-  if (num % i == 0) delNumber.push(num / i);
+  if (num % i == 0) delNumber.push(i);
 }
 console.log("Первые N делителей этого числа нацело = " + delNumber);
 
@@ -102,7 +103,7 @@ console.log("Cумма цифр числа, которые кратны двум
 
 /*Заданы две переменные для двух целых чисел, найти максимальное 
 общее значение которое нацело делит два заданных числа.*/
-
+/*
 function maxDelitel(a, b) {
   if (b === 0) {
     return a;
@@ -110,3 +111,4 @@ function maxDelitel(a, b) {
   return maxDelitel(b, a % b);
 }
 maxDelitel(5, 25);
+*/
