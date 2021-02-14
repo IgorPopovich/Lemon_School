@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>JavaScript Урок №1</title>
+  </head>
+  <body>
+    <p>Домашнее задание №6</p>
+    <a href="https://lemon.school/">Lemon school</a>
+    <div class="formInput">
+      <form>
+        <p class="pForm">Добавить студента</p>
+        <label
+          >First Name:
+          <input type="text" name="name" id="name" placeholder="name" />
+        </label>
+        <label
+          >Estimate:
+          <input
+            type="number"
+            name="estimate"
+            id="estimate"
+            placeholder="estimate"
+          />
+        </label>
+        <label
+          >Course:
+          <input type="number" name="course" id="course" placeholder="course" />
+        </label>
+        <label
+          >Active:
+          <input type="text" name="active" id="active" placeholder="active" />
+        </label>
+      </form>
+      <button id="buttonAdd" onclick="addStudent()" type="submit">Добавить</button>
+    </div>
+    <div class="count">
+      <h1>Количество тэгов "p" на странице: <span class="span"></span></h1>
+    </div>
+    <div class="count count_href">
+      <h1>Количество ссылок на странице: <span class="ahref"></span></h1>
+    </div>
+
+    <div class="wrapper">
+      <p class="list">Список студентов</p>
+      <ol class="ol"></ul>
+    </div>
+
+
+    <script src="main.js"></script>
+  </body>
+</html>

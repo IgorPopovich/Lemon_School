@@ -1,0 +1,60 @@
+body {
+    background: rgb(83, 78, 78);
+}
+.formInput {
+    background: rgb(209, 209, 209);
+    border: 2px solid rgb(39, 3, 3);
+    width: 270px;
+    border-radius: 8px;
+    padding: 8px;
+    margin: auto;
+}
+li {
+    border: 1px solid rgb(7, 4, 26);
+    background: rgb(209, 209, 209);
+    width: 700px;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 8px;
+    font-size: 20px;
+}
+.list {
+    font-size: 20px;
+    margin-left: 100px;
+    color: rgb(235, 235, 235);
+    font-weight: bolder;
+}
+.pForm {
+    font-size: 25px;
+    margin: 10px;
+    text-align: center;
+}
+#buttonAdd {
+    color: red;
+    margin-left: 35%;
+}
+.removeStudent {
+    background-color: rgba(189, 70, 70, 0.644);
+    border-radius: 4px;
+    float: right;
+}
+.count {
+    background-color: rgb(224, 224, 224);
+    border: 2px solid rgb(39, 3, 3);
+    border-radius: 3px;
+    font-size: 10px;
+    width: 400px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(53, 13, 13);
+    margin-top: 8px;
+}
+input {
+    margin-bottom: 10px;
+}
+a {
+    color: rgb(255, 196, 70);
+    font-weight: bolder;
+    text-decoration: none;
+}
