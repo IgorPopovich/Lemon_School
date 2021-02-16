@@ -89,7 +89,7 @@ students.forEach((item) => {
     noActiveStudents.push(item);
   } else {
     activeStudents.push(item);
-  };
+  }
 });
 
 let course1 = [];
@@ -110,9 +110,9 @@ function noActStud(arr) {
       course4.push(arr[i]);
     } else if (arr[i].course === 5 && arr[i].active === false) {
       course5.push(arr[i]);
-    };
-  };
-};
+    }
+  }
+}
 
 noActStud(students);
 
@@ -156,9 +156,9 @@ function middleEstimateActive(arr) {
       courseStud4.push(arr[i]);
     } else if (arr[i].course === 5) {
       courseStud5.push(arr[i]);
-    };
-  };
-};
+    }
+  }
+}
 
 middleEstimateActive(activeStudents);
 
@@ -167,19 +167,24 @@ let count = 0;
 function estimAtsStudActive(arr) {
   for (let i = 0; i < arr.length; i++) {
     count += arr[i].estimate;
-  };
+  }
   let course = 0;
   for (let i = 0; i < arr.length; i++) {
     course = arr[i].course;
-  };
-  console.log(
-    "Средний балл по курсу " + course + " составляет " + count / arr.length
-  );
+  }
+  if (arr.length == 0) {
+    return;
+  } else {
+    console.log(
+      "Средний балл по курсу " + course + " составляет " + count / arr.length
+    );
+  }
   count = 0;
-};
+}
+let arrArr = [];
 
-estimAtsStudActive(courseStud1);
-estimAtsStudActive(courseStud2);
-estimAtsStudActive(courseStud3);
-estimAtsStudActive(courseStud4);
-estimAtsStudActive(courseStud5);
+arrArr.push(courseStud1, courseStud2, courseStud3, courseStud4, courseStud5);
+
+arrArr.forEach((item) => {
+  estimAtsStudActive(item);
+});

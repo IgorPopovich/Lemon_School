@@ -35,7 +35,9 @@
           <input type="text" name="active" id="active" placeholder="active" />
         </label>
       </form>
-      <button id="buttonAdd" onclick="addStudent()" type="submit">Добавить</button>
+      <button id="buttonAdd" onclick="addStudent()" type="submit">
+        Добавить
+      </button>
     </div>
     <div class="count">
       <h1>Количество тэгов "p" на странице: <span class="span"></span></h1>
@@ -43,12 +45,17 @@
     <div class="count count_href">
       <h1>Количество ссылок на странице: <span class="ahref"></span></h1>
     </div>
+    <div class="count">
+      <h1>Общее количество неактивных студентов: <span class="noActStudents"></span></h1>
+    </div>
+    <div class="count">
+      <h1>Средний балл по курсам: <span class="estimate"></span></h1>
+    </div>
 
     <div class="wrapper">
       <p class="list">Список студентов</p>
-      <ol class="ol"></ul>
+      <ol class="ol"></ol>
     </div>
-
 
     <script src="main.js"></script>
   </body>

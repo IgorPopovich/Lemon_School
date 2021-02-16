@@ -1,12 +1,13 @@
 /*(С этого занятия и все последующие по поводу вывода данных - выводим в HTML документе, если не указано иного)
-Посчитать количество ссылок на странице, вывести их содержимое
-Посчитать количество тегов “p” на странице которые имеют класс “phrase” - вывести их содержимое
-В задании из пятого урока, взять массив со студентами и вывести их на страницу согласно сверстанной HTML-структуре, 
-рядом с каждым студентом вывести крестик - по нажатию на который студент будет удален (удаляется как со страницы, так и с объекта), 
+- Посчитать количество ссылок на странице, вывести их содержимое
+- Посчитать количество тегов “p” на странице которые имеют класс “phrase” - вывести их содержимое
+- В задании из пятого урока, взять массив со студентами и вывести их на страницу согласно сверстанной HTML-структуре, 
+рядом с каждым студентом вывести крестик - по нажатию на который студент будет удален 
+(удаляется как со страницы, так и с объекта), 
 если был удален последний студент написать текстовое сообщение (“Студенты не найдены”)
-Вывести статистику средних оценок в разрезе курса и статистику по количеству неактивных студентов в разрезе каждого курса и общее 
-количество неактивных студентов
-Добавить текстовое поле ввода - ввод имени студента, поле ввода для курса, оценки и checkbox для активности студента, 
+- Вывести статистику средних оценок в разрезе курса и статистику по количеству неактивных студентов в разрезе каждого 
+курса и общее количество неактивных студентов
+- Добавить текстовое поле ввода - ввод имени студента, поле ввода для курса, оценки и checkbox для активности студента, 
 по нажатии на кнопку “Добавить” - студент новый добавляется в список студентов
 */
 
@@ -35,6 +36,15 @@ let estimates = document.getElementById("estimate");
 let courses = document.getElementById("course");
 let actives = document.getElementById("active");
 let ol = document.querySelector("ol");
+
+function sortStudents() {
+  let noActiveStudents = [];
+  students.forEach((item) => {
+    if (item.active === false) {
+      noActiveStudents.push(item);
+    }
+  });
+}
 
 function addStudent() {
   let li = document.createElement("li");
@@ -97,7 +107,68 @@ for (let i = 0; i < students.length; i++) {
   });
 }
 
+let noActiveStudents = [];
+
+students.forEach((item) => {
+  if (item.active === false) {
+    noActiveStudents.push(item);
+  }
+});
+
+let course1 = [];
+
+let course2 = [];
+
+let course3 = [];
+
+let course4 = [];
+
+let course5 = [];
+
+function countCourseStudent(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].course === 1) {
+      course1.push(arr[i]);
+    } else if (arr[i].course === 2) {
+      course2.push(arr[i]);
+    } else if (arr[i].course === 3) {
+      course3.push(arr[i]);
+    } else if (arr[i].course === 4) {
+      course4.push(arr[i]);
+    } else if (arr[i].course === 5) {
+      course5.push(arr[i]);
+    }
+  }
+}
+countCourseStudent(students);
+
+let estimate = document.querySelector(".estimate");
+
+
+let count = 0;
+function estimAtsStudActive(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    count += arr[i].estimate;
+  }
+  let course = 0;
+  for (let i = 0; i < arr.length; i++) {
+    course = arr[i].course;
+  }
+   estimate.textContent = `Средний балл по курсу ${course} составляет ${count / arr.length}`
+
+  count = 0;
+}
+let arrArr = [];
+
+arrArr.push(course1, course2, course3, course4, course5);
+
+arrArr.forEach((item) => {
+  estimAtsStudActive(item);
+});
+
 let span = document.querySelector(".span");
 span.textContent = document.querySelectorAll("p").length;
 let ahref = document.querySelector(".ahref");
 ahref.textContent = document.querySelectorAll("a").length;
+let noActStudents = document.querySelector(".noActStudents");
+noActStudents.textContent = noActiveStudents.length;
