@@ -145,7 +145,7 @@ countCourseStudent(students);
 let estimate = document.querySelector(".estimate");
 
 let count = 0;
-let aaa = [];
+let arrDemo = [];
 function estimAtsStudActive(arr) {
   for (let i = 0; i < arr.length; i++) {
     count += arr[i].estimate;
@@ -154,7 +154,7 @@ function estimAtsStudActive(arr) {
   for (let i = 0; i < arr.length; i++) {
     course = arr[i].course;
   }
-  aaa.push (
+  arrDemo.push (
     "Средний балл по курсу " + course + " составляет " + count / arr.length
   );
   count = 0;
@@ -179,4 +179,4 @@ ahref.textContent = document.querySelectorAll("a").length;
 let noActStudents = document.querySelector(".noActStudents");
 noActStudents.textContent = noActiveStudents.length;
 
-estimate.textContent = `${aaa[1]}, ${aaa[2]}, ${aaa[3]}, ${aaa[4]}, ${aaa[5]}`;
+estimate.textContent = `${arrDemo[1]}, ${arrDemo[2]}, ${arrDemo[3]}, ${arrDemo[4]}, ${arrDemo[5]}`;
