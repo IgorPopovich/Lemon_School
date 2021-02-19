@@ -10,48 +10,59 @@
   <body>
     <p>Домашнее задание №6</p>
     <a href="https://lemon.school/">Lemon school</a>
-    <div class="formInput">
-      <form>
-        <p class="pForm">Добавить студента</p>
-        <label
-          >First Name:
-          <input type="text" name="name" id="name" placeholder="name" />
-        </label>
-        <label
-          >Estimate:
-          <input
-            type="number"
-            name="estimate"
-            id="estimate"
-            placeholder="estimate"
-          />
-        </label>
-        <label
-          >Course:
-          <input type="number" name="course" id="course" placeholder="course" />
-        </label>
-        <label
-          >Active:
-          <input type="text" name="active" id="active" placeholder="active" />
-        </label>
-      </form>
-      <button id="buttonAdd" onclick="addStudent()" type="submit">
-        Добавить
-      </button>
+    <div class="top">
+      <div class="formInput">
+        <form>
+          <p class="pForm">Добавить студента</p>
+          <label
+            >First Name:
+            <input type="text" name="name" id="name" placeholder="name" />
+          </label>
+          <label
+            >Estimate:
+            <input
+              type="number"
+              name="estimate"
+              id="estimate"
+              placeholder="estimate"
+            />
+          </label>
+          <label
+            >Course:
+            <input
+              type="number"
+              name="course"
+              id="course"
+              placeholder="course"
+            />
+          </label>
+          <label
+            >Active:
+            <input type="text" name="active" id="active" placeholder="active" />
+          </label>
+        </form>
+        <button id="buttonAdd" onclick="addStudent()" type="submit">
+          Добавить
+        </button>
+      </div>
+      <div>
+        <div class="count">
+          <h1>Количество тэгов "p" на странице: <span class="span"></span></h1>
+        </div>
+        <div class="count count_href">
+          <h1>Количество ссылок на странице: <span class="ahref"></span></h1>
+        </div>
+        <div class="count">
+          <h1>
+            Общее количество неактивных студентов:
+            <span class="noActStudents"></span>
+          </h1>
+        </div>
+        <div class="count">
+          <h1>Средний балл по курсам: <span class="estimate"></span></h1>
+        </div>
+      </div>
     </div>
-    <div class="count">
-      <h1>Количество тэгов "p" на странице: <span class="span"></span></h1>
-    </div>
-    <div class="count count_href">
-      <h1>Количество ссылок на странице: <span class="ahref"></span></h1>
-    </div>
-    <div class="count">
-      <h1>Общее количество неактивных студентов: <span class="noActStudents"></span></h1>
-    </div>
-    <div class="count">
-      <h1>Средний балл по курсам: <span class="estimate"></span></h1>
-    </div>
-
     <div class="wrapper">
       <p class="list">Список студентов</p>
       <ol class="ol"></ol>
