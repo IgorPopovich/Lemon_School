@@ -60,6 +60,9 @@ a {
     font-weight: bolder;
     text-decoration: none;
 }
+p {
+    color: rgb(209, 209, 209);
+}
 .top {
     display: flex;
 }
