@@ -6,7 +6,7 @@ body {
     border: 2px solid rgb(39, 3, 3);
     width: 270px;
     border-radius: 8px;
-    padding: 8px;
+    padding: 10px;
     margin: auto;
     box-shadow: 0 14px 28px rgba(255, 255, 255, 0.63), 0 10px 10px rgba(255, 255, 255, 0.22);
 }
@@ -14,7 +14,7 @@ li {
     color: rgb(209, 209, 209);
     border: 1px solid rgb(7, 4, 26);
     box-shadow: 11px 11px 19px -11px #ffffff;
-    width: 800px;
+    width: 1000px;
     border-radius: 3px;
     padding: 5px;
     margin: 8px;
@@ -26,15 +26,25 @@ li {
     margin-left: 100px;
     color: rgb(235, 235, 235);
     font-weight: bolder;
+    font-family: sans-serif;
 }
 .pForm {
+    color: black;
+    font-weight: bolder;
     font-size: 25px;
     margin: 10px;
     text-align: center;
+    font-family: sans-serif;
 }
 #buttonAdd {
-    color: red;
-    margin-left: 35%;
+    color: rgb(133, 19, 19);
+    font-size: 15px;
+    font-weight: bolder;
+    margin-left: 30%;
+    border: 2px solid rgb(139, 89, 89);
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
 }
 .removeStudent {
     background-color: rgba(189, 70, 70, 0.644);
@@ -44,13 +54,14 @@ li {
 .count {
     background-color: rgb(224, 224, 224);
     border: 2px solid rgb(39, 3, 3);
-    border-radius: 30%;
     font-size: 10px;
-    width: 300px;
+    width: 170px;
     text-align: center;
     margin-right: auto;
     color: rgb(53, 13, 13);
     margin-top: 8px;
+    padding: 10px;
+    font-family: sans-serif;
 }
 input {
     margin-bottom: 10px;
@@ -75,16 +86,17 @@ h1 {
 }
 .top_dz {
     text-align: center;
+    font-family: sans-serif;
 }
 .href {
     margin-left: 45%;
 }
 .right {
     box-shadow: 8px 8px 11px 5px #ffffff;
-    
-    width: 300px;
+    float: right;
+    width: 350px;
     padding: 10px;
-    margin-left: 60px;
+    margin-left: auto;
 }
 .select {
     float: right;
@@ -95,4 +107,35 @@ h1 {
     float: right;
     margin-right: 15px;
     height: 25px;
+}
+.btn {
+    margin-left: 15px;
+    background-color: rgb(196, 202, 255);
+    border-radius: 5px;
+}
+.inp {
+    margin-left: 15px;
+    border-radius: 5px;
+    height: 25px;
+}
+.noActStudents {
+    color: rgb(39, 37, 37);
+    font-size: 30px;
+    font-family: sans-serif;
+}
+.select {
+    border-radius: 10px;
+}
+.label {
+    border: 1px solid black;
+    height: 20px;
+    width: 98%;
+}
+.addText {
+    font-size: 35px;
+    color: #ffffff;
+}
+.changeData {
+    font-family: sans-serif;
+    border-radius: 6px;
 }

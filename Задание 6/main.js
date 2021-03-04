@@ -16,7 +16,6 @@ const students = [
   { name: "Nick", estimate: 3, course: 1, active: true },
   { name: "Igor", estimate: 2, course: 4, active: false },
   { name: "Alex", estimate: 5, course: 2, active: true },
-  { name: "Alex", estimate: 4, course: 3, active: true },
   { name: "James", estimate: 3, course: 2, active: true },
   { name: "Kevin", estimate: 2, course: 4, active: false },
   { name: "Simon", estimate: 5, course: 2, active: true },
@@ -51,6 +50,32 @@ function addStudent() {
   let removeStudent = document.createElement("button");
   removeStudent.textContent = "X";
   removeStudent.className = "removeStudent";
+
+  let select = document.createElement("select");
+  select.className = "select";
+  let option1 = document.createElement("option");
+  let optionName = document.createElement("option");
+  let optionEstimate = document.createElement("option");
+  let optionCourse = document.createElement("option");
+  let optionActive = document.createElement("option");
+
+  optionName.text = "Имя";
+  optionEstimate.value = "2";
+  optionEstimate.text = "Оценка";
+  optionCourse.value = "3";
+  optionCourse.text = "Курс";
+  optionActive.value = "4";
+  optionActive.text = "Активность";
+
+  select.add(optionName);
+  select.add(optionEstimate);
+  select.add(optionCourse);
+  select.add(optionActive);
+
+  let checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "checkbox";
+
   li.textContent =
     "Name: " +
     names.value +
@@ -60,8 +85,20 @@ function addStudent() {
     courses.value +
     ", active - " +
     actives.value;
-  ol.appendChild(li);
+
+  if (estimates.value <= 3) {
+    li.style.background = "rgba(255, 30, 0, 0.4)";
+  } else if (estimates.value <= 4) {
+    li.style.background = "rgba(255, 238, 0, 0.4)";
+  } else if (estimates.value <= 5) {
+    li.style.background = "rgba(94, 255, 0, 0.4)";
+  }
+
+  ol.prepend(li);
   li.appendChild(removeStudent);
+  li.appendChild(checkbox);
+  li.appendChild(select);
+
   removeStudent.addEventListener("click", function () {
     ol.removeChild(li);
   });
@@ -71,6 +108,8 @@ function addStudent() {
     course: document.getElementById("course").value,
     active: document.getElementById("active").value,
   });
+  newStudent();
+
   if (students.length > 0) {
     let list = document.querySelector(".list");
     list.textContent = "Список студентов";
@@ -79,33 +118,125 @@ function addStudent() {
   estimates.value = "";
   courses.value = "";
   actives.value = "";
-}
 
-for (let i = 0; i < students.length; i++) {
-  let li = document.createElement("li");
-  let removeStudent = document.createElement("button");
-  removeStudent.textContent = "X";
-  removeStudent.className = "removeStudent";
-  li.textContent =
-    "Name: " +
-    students[i].name +
-    ": estimate - " +
-    students[i].estimate +
-    ", course - " +
-    students[i].course +
-    ", active - " +
-    students[i].active;
-  ol.appendChild(li);
-  li.appendChild(removeStudent);
-  removeStudent.addEventListener("click", function (e) {
-    ol.removeChild(li);
-    students.pop(students[i]);
-    if (students.length < 1) {
-      let list = document.querySelector(".list");
-      list.textContent = "Студенты не найдены";
+  checkbox.addEventListener("change", function (e) {
+    if (this.checked) {
+      li.textContent = ", active - true";
+    } else {
+      li.textContent = ", active - false";
     }
+    li.appendChild(removeStudent);
+    li.appendChild(checkbox);
   });
 }
+
+function newStudent() {
+  for (let i = 0; i < students.length; i++) {
+    let li = document.createElement("li");
+    let removeStudent = document.createElement("button");
+    removeStudent.textContent = "X";
+    removeStudent.className = "removeStudent";
+
+    let select = document.createElement("select");
+    select.className = "select";
+    let option1 = document.createElement("option");
+    let optionName = document.createElement("option");
+    let optionEstimate = document.createElement("option");
+    let optionCourse = document.createElement("option");
+    let optionActive = document.createElement("option");
+
+    let changeData = document.createElement("button");
+    changeData.className = "changeData";
+    changeData.textContent = "Изменить: ";
+
+    optionName.value = "1";
+    optionName.text = "Имя";
+    optionEstimate.value = "2";
+    optionEstimate.text = "Оценка";
+    optionCourse.value = "3";
+    optionCourse.text = "Курс";
+    optionActive.value = "4";
+    optionActive.text = "Активность";
+
+    select.add(optionName);
+    select.add(optionEstimate);
+    select.add(optionCourse);
+    select.add(optionActive);
+
+    changeData.addEventListener('click', function () {
+      let inp = document.createElement("input");
+      let btn = document.createElement("button");
+      btn.textContent = "OK";
+      if (select.value == "1") {
+        li.textContent = "";
+        li.prepend(inp);
+        li.append(btn);
+      }
+    })
+
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.className = "checkbox";
+
+    li.textContent =
+      "Name: " +
+      students[i].name +
+      ", estimate - " +
+      students[i].estimate +
+      ", course - " +
+      students[i].course +
+      ", active - " +
+      students[i].active;
+
+    if (students[i].estimate <= 3) {
+      li.style.background = "rgba(255, 30, 0, 0.4)";
+    } else if (students[i].estimate <= 4) {
+      li.style.background = "rgba(255, 238, 0, 0.4)";
+    } else if (students[i].estimate <= 5) {
+      li.style.background = "rgba(94, 255, 0, 0.4)";
+    }
+
+    checkbox.addEventListener("change", function (e) {
+      if (this.checked) {
+        li.textContent =
+          "Name: " +
+          students[i].name +
+          ", estimate - " +
+          students[i].estimate +
+          ", course - " +
+          students[i].course +
+          ", active - true";
+      } else {
+        li.textContent =
+          "Name: " +
+          students[i].name +
+          ", estimate - " +
+          students[i].estimate +
+          ", course - " +
+          students[i].course +
+          ", active - false";
+      }
+      li.appendChild(removeStudent);
+      li.appendChild(checkbox);
+    });
+
+    ol.prepend(li);
+    li.appendChild(removeStudent);
+    li.appendChild(checkbox);
+    li.appendChild(select);
+    li.appendChild(changeData);
+
+    removeStudent.addEventListener("click", function (e) {
+      ol.removeChild(li);
+      students.pop(students[i]);
+      if (students.length < 1) {
+        let list = document.querySelector(".list");
+        list.textContent = "Студенты не найдены";
+      }
+    });
+  }
+}
+newStudent();
 
 let noActiveStudents = [];
 
@@ -142,10 +273,11 @@ function countCourseStudent(arr) {
 }
 countCourseStudent(students);
 
-let estimate = document.querySelector(".estimate");
+
 
 let count = 0;
 let arrDemo = [];
+
 function estimAtsStudActive(arr) {
   for (let i = 0; i < arr.length; i++) {
     count += arr[i].estimate;
@@ -154,15 +286,13 @@ function estimAtsStudActive(arr) {
   for (let i = 0; i < arr.length; i++) {
     course = arr[i].course;
   }
-  arrDemo.push (
-    "Средний балл по курсу " + course + " составляет " + count / arr.length
+  let num = count / arr.length
+  
+  arrDemo.push(
+    "Средний балл по курсу " + course + " составляет " + num
   );
   count = 0;
 }
-//let estimate = document.querySelector(".estimate");
-
-//estimate.textContent = `${aaa[1]}, ${aaa[2]}, ${aaa[3]}, ${aaa[4]}, ${aaa[5]}`;
-
 
 let arrArr = [];
 
@@ -178,5 +308,6 @@ let ahref = document.querySelector(".ahref");
 ahref.textContent = document.querySelectorAll("a").length;
 let noActStudents = document.querySelector(".noActStudents");
 noActStudents.textContent = noActiveStudents.length;
+let estimate = document.querySelector(".estimate");
 
 estimate.textContent = `${arrDemo[1]}, ${arrDemo[2]}, ${arrDemo[3]}, ${arrDemo[4]}, ${arrDemo[5]}`;

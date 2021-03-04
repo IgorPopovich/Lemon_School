@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <title>JavaScript</title>
+</head>
+
+<body>
+  <p class="top_dz">Домашние задания № 7 - 9</p>
+  <div class="top">
+    <div>
+      <div class="formInput">
+        <form>
+          <p class="pForm">Добавить студента</p>
+          <label>First Name:
+            <input class="label" type="text" name="name" id="name" placeholder="имя" pattern="[A-Za-z]" />
+          </label>
+          <label>Estimate:
+            <input class="label" type="number" name="estimate" id="estimate" placeholder="оценка" />
+          </label>
+          <label>Course:
+            <input class="label" type="number" name="course" id="course" placeholder="курс" />
+          </label>
+          <label>Active:
+            <input class="label" type="text" name="active" id="active" placeholder="активность" />
+          </label>
+          <label>Email:
+            <input class="label" type="email" name="email" id="email" placeholder="email" />
+          </label>
+        </form>
+        <button id="buttonAdd" onclick="addStudent()" type="submit">
+          Добавить
+        </button>
+      </div>
+      <div class="wrapper">
+        <p class="list">Список студентов</p>
+        <ol class="ol"></ol>
+      </div>
+    </div>
+    <div class="right">
+      <div class="count">
+        <h1>
+          Общее количество неактивных студентов:
+          <span class="noActStudents"></span>
+        </h1>
+      </div>
+      <div class="count">
+        <h1>Средний балл по курсам: <span class="estimate"></span></h1>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
